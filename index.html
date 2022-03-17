@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Libreria Castor</title>
+    <!--Agrego el SEO -->
+    <meta name="description" content="Libreria Castor, tenemos todo lo que necesitas para el colegio. Envio gratis a CABA a partir de los $600">
+    <meta name="keywords" content="Libreria, utiles, cuadernos, manualidades, colegio, bricolage">
+    <!-- fav icon -->
+    <link rel="shortcut icon" href="./img/school-supplies.png">
+
+
+</head>
+<body >
+   
+    <header>
+      <h1>Libreria Castor</h1>
+        <h2>Todo lo que necesitas para el colegio a solo un click</h2>
+        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+    </header>
+
+    <select id="selecGenero">
+        <option value="all">Todos</option>
+        <option value="Utiles escolares">Utiles escolares</option>
+        <option value="Promosiones">Promosiones</option>
+        <option value="Repuestos">Repuestos</option>
+    </select>
+
+    <main id="contenedor-productos">
+      
+    </main>
+
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Carrito</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+               
+            </div>
+            <p class="precioProducto">Precio total: $<span id="precioTotal"></span></p>
+            <div id="terminar" style="display: flex; justify-content: flex-end;"></div>
+        </div>
+    </div>
+    
+
+    <!-- segundo modal -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="container">
+                <div class="col1">
+                  <div class="card">
+                    <div id="front" class="front">
+                      <div class="type">
+                        <img class="bankid"/>
+                      </div>
+                      <span class="chip"></span>
+                      <span class="card_number">&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; </span>
+                      <div class="date"><span class="date_value">MM / YYYY</span></div>
+                      <span class="fullname">TITULAR</span>
+                    </div>
+                    <div id="back" class="back">
+                      <div class="magnetic"></div>
+                      <div class="bar"></div>
+                      <span class="seccode">&#x25CF;&#x25CF;&#x25CF;</span>
+                      <span class="chip"></span><span class="disclaimer">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero temporibus, totam assumenda, accusamus asperiores eaque fugiat illo maiores obcaecati at saepe expedita ab voluptatum quibusdam ipsa beatae veniam consectetur atque! </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col2">
+                  <label>Número de Tarjeta</label>
+                  <input class="number" type="text" required ng-model="ncard" maxlength="19" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                  <label>Nombre del Titular</label>
+                  <input class="inputname" type="text" required placeholder=""/>
+                  <label>Fecha de Vencimineto</label>
+                  <input class="expire" type="text" required placeholder="MM / YYYY"/>
+                  <label>Número Seguridad</label>
+                  <input class="ccv" type="text" placeholder="CVC" required maxlength="3" onkeypress='return event.charCode >= 48 && event.charCode <= 57'/>
+                  <button id="fin-compra" class="buy"><i class="material-icons">lock</i>Pagar $<span id="pagar">--.--</span></button>
+                </div>
+              </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat"><i class="far fa-times-circle"></i></a>
+        </div>
+      </div>
+    
+ 
+    
+   
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script src="data/stock.json"></script>
+    <script src="modal.js"></script>
+    <script src="checkout.js"></script>
+    <script src="app.js"></script>
+    
+    <p class="lead">
+      Hola! Gracias por visitar Libreria Castor. Encontrá lo que necesitas para el colegio al alcance de tu bolsillo. No te pierdas de nuestras ofertas, suscribete a nuestro newsletter!
+    </p>
+
+
+  </main>
+
+  <div class="alert alert-dark" role="alert">
+    <a href="#">Obtené un 15% de descuento con tu primera compra!</a>
+        
+  </div>
+</body>
+<!--FOOTER-->
+<blockquote class="blockquote text-center">
+  <p class="mb-0"></p>
+    <footer class="blockquote-footer">Todos los derechos e izquierdos reservados. @Libreria Castor <cite title="Source Title"></cite></footer>
+</blockquote>
+</html>
