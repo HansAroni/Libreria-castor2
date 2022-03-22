@@ -10,17 +10,15 @@ const precioTotal = document.getElementById('precioTotal');
 
 const selecGenero = document.getElementById('selecGenero')
 
+// Operador ternario
 
 selecGenero.addEventListener('change',()=>{
     console.log(selecGenero.value)
-    if(selecGenero.value == 'all'){
-        mostrarProductos(stockProductos)
-    }else{
-        mostrarProductos(stockProductos.filter(el => el.Genero   == selecGenero.value))
+    selecGenero.value == 'all' ? mostrarProductos(stockProductos) : mostrarProductos(stockProductos.filter(el => el.Genero   == selecGenero.value))
         console.log(stockProductos.filter(el => el.Genero  == selecGenero.value))
 
     }
-})
+)
 
 
  //ajax
