@@ -92,6 +92,8 @@ $(function(){
     }).on("keydown input", function(e){
       
       $(".card_number").text($(this).val());
+
+      // Con operador AND
       
       if(e.key >= 0 && e.key <= 9){
         if($(this).val().length === 4 || $(this).val().length === 9 || $(this).val().length === 14){
