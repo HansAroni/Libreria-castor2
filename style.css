@@ -389,3 +389,14 @@ html {
     margin: auto;
     background: #ddd;
   }
+  .card:hover {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+    -webkit-box-shadow: 0 8px 10px #178beb;
+            box-shadow: 0 8px 10px #178beb;
+    border: 1px solid black;
+  }
+  #selecGenero{
+    border-radius: 25%;
+
+  }
